@@ -1,0 +1,441 @@
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: 'Exo 2';
+    font-size: 22px;
+}
+
+header {
+    width: 100%;
+}
+
+.nav-container{
+    background-color: grey;
+}
+
+#navIcon {
+    border-radius: 50%;
+    height: 4rem;
+    padding: 5px;
+}
+
+.nav-spacing {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.nav-buttons {
+    padding: 0.5rem;
+}
+
+nav li a {
+    text-decoration: none;
+    color: inherit;
+    background: none;
+    padding: 0;
+    margin: 0;
+    border: none;
+    font: inherit;
+}
+
+
+.image-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.div-center {
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.padding {
+    padding: 10px
+}
+
+.card {
+    border-radius: 30px;
+    background: #8985b4;
+    box-shadow: 15px 15px 30px #bebebe,
+               -15px -15px 30px #ffffff;
+    margin: 20px auto;
+}
+
+a {
+    color: inherit;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+a.active {
+    border-radius: 10px 10px 0 0;
+    background-color: #8985b4;
+    color: white;
+}
+
+.clear{
+    clear:both;
+}
+
+.intro{
+    border-bottom: 5px solid #692b66;
+    border-radius: 0 0 50px 50px;
+    max-width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 0;
+    z-index: 1;
+}
+
+div h1~p{
+    padding: 0;
+    margin: 0;
+}
+
+
+.kami-description {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+@media only screen and (min-width: 1024px) {
+    .kami-description {
+        width: 60%;
+    }
+}
+
+.kami-logo{
+    border-radius: 50%;
+}
+
+video {
+    width: 90%;
+}
+
+.sarukindredimage {
+    max-width: 100%;
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 10vh;
+    width: 100%;
+}
+
+.footer-image {
+    height: 5vh;
+    border-radius: 50%;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-list {
+    margin: 0;
+}
+
+@media only screen and (max-width: 425px) {
+    footer p {
+        width: 50%;
+    }
+}
+
+/* team page */
+
+.team-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 50px;
+}
+
+.individual-card {
+    width: 190px;
+    height: 254px;
+    border-radius: 30px;
+    background: #212121;
+    box-shadow: 15px 15px 30px rgb(25, 25, 25),
+                -15px -15px 30px rgb(60, 60, 60);
+    margin: 10px;
+    color: white;
+}
+   
+.team-pfp {
+    width: 100%;
+    border-radius: 30px 30px 0 0;
+}
+
+div p {
+    display: block;
+}
+
+/* membership page */
+
+.membership-levels {
+    text-align: center;
+}
+
+table {
+    display: inline-block;
+}
+
+caption {
+    background-color: #49444d;
+    color: white;
+}
+
+table, th, td {
+    border: 1px solid;
+}
+
+table th {
+    background-color: #2b1648;
+    color: #fff;
+} 
+
+/* Set alternating background colors for table rows */
+table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Even row background color */
+}
+
+/* Override background color for odd rows (if needed) */
+table tr:nth-child(odd) {
+    background-color: #fff; /* Odd row background color */
+}
+
+/* Set padding for table cells */
+table td, table th {
+    padding: 10px; /* Adjust padding as needed */
+    border: 1px solid #ddd; /* Add border for table cells */
+}
+
+
+@media only screen and (max-width: 320px) {
+    table {
+        padding: 0;
+    }
+}
+
+
+
+/* protectors page */
+
+.protector-explained {
+
+}
+
+.protector-leaderboard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.protector-list {
+    list-style: none;
+    padding-bottom: 15px;
+}
+
+.protectors {
+    padding: 10px 0;
+}
+
+.container {
+    color: #2b164880;
+    position: relative;
+    background: linear-gradient(0deg, #0d0d0d82 0%, #ffffff 100%);
+}
+  
+.container::before {
+    content: "";
+    background-color: #000000;
+    position: absolute;
+    background-image: url(../images/rekainokamigamilogo.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: opacity(0.5);
+}
+
+.container::after {
+    background-color: #000000;
+}
+  
+.container::before {
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    top: 30%;
+    right: 7%;
+}
+  
+.container::after {
+    content: "";
+    position: absolute;
+    height: 3rem;
+    top: 8%;
+    right: 5%;
+    border: 1px solid;
+}
+  
+.container .box {
+    width: 80%;
+    height: auto;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.074);
+    border: 1px solid rgba(255, 255, 255, 0.222);
+    backdrop-filter: blur(20px);
+    border-radius: 0.7rem;
+    transition: all ease 0.3s;
+}
+  
+.container .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: inherit;
+}
+  
+.container .box .title {
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+  
+.container .box div strong {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+  
+.container .box div p {
+    margin: 0;
+    font-size: 0.9em;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+}
+  
+.container .box div span {
+    font-size: 0.7rem;
+    font-weight: 300;
+}
+  
+.container .box div span:nth-child(3) {
+    font-weight: 500;
+    margin-right: 0.2rem;
+}
+  
+.container .box:hover {
+    box-shadow: 0px 0px 20px 1px rgb(255 0 0);
+    border: 1px solid rgb(255 0 0);
+}
+  
+
+/* store page */
+
+.soon-kamiko {
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px 10px #f0aeee;    ;
+    height: 70vh;
+    width: auto;
+}
+
+@media only screen and (max-width: 425px) {
+    .soon {
+        margin-bottom: 20px;
+    }
+}
+
+.shapedividers{
+    overflow:hidden;
+    position:relative;
+    }
+    .shapedividers::before{
+    content:'';
+    font-family:'shape divider from ShapeDividers.com';
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    top: -1px;
+    z-index: 3;
+    pointer-events: none;
+    background-repeat: no-repeat; 
+    background-size: 100% 243px;
+    background-position: 50% 0%;    
+    background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.28 2.17" preserveAspectRatio="none"><path d="M0 .5c3.07.55 9.27-.42 16.14 0 6.88.4 13.75.57 19.14-.11V0H0z" fill="%23000000"/><path d="M0 1c3.17.8 7.29-.38 10.04-.55 2.75-.17 9.25 1.47 12.67 1.3 3.43-.17 4.65-.84 7.05-.87 2.4-.02 5.52.88 5.52.88V0H0z" opacity=".5" fill="%23000000"/><path d="M0 1.85c2.56-.83 7.68-.3 11.79-.42 4.1-.12 6.86-.61 9.58-.28 2.73.33 5.61 1.17 8.61 1 3-.19 4.73-.82 5.3-.84V.1H0z" opacity=".5" fill="%23000000"/></svg>'); 
+    }
+    
+    @media (min-width:768px){
+    .shapedividers::before{
+    background-size: 100% 204px;
+    background-position: 50% 0%;   
+    background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.28 2.17" preserveAspectRatio="none"><path d="M0 .5c3.07.55 9.27-.42 16.14 0 6.88.4 13.75.57 19.14-.11V0H0z" fill="%23fbd8c2"/><path d="M0 1c3.17.8 7.29-.38 10.04-.55 2.75-.17 9.25 1.47 12.67 1.3 3.43-.17 4.65-.84 7.05-.87 2.4-.02 5.52.88 5.52.88V0H0z" opacity=".5" fill="%23fbd8c2"/><path d="M0 1.85c2.56-.83 7.68-.3 11.79-.42 4.1-.12 6.86-.61 9.58-.28 2.73.33 5.61 1.17 8.61 1 3-.19 4.73-.82 5.3-.84V.1H0z" opacity=".5" fill="%23fbd8c2"/></svg>'); 
+    }  
+    }
+     
+    @media (min-width:1025px){
+    .shapedividers::before{ 
+    bottom: -0.1vw;
+    left: -0.1vw;
+    right: -0.1vw;
+    top: -0.1vw; 
+    background-size: 100% 113px;
+    background-position: 50% 0%;  
+    background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 669.4 133.88"><path fill="%23b5dafb" d="M0 0c0 133.88 334.7 0 334.7 133.88C334.7 0 669.4 133.88 669.4 0z"/></svg>'); 
+    }
+    }
+    @media (min-width:2100px){
+    .shapedividers::before{
+    background-size: 100% calc(2vw + 113px);
+    }
+}
+
