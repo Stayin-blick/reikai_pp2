@@ -439,3 +439,129 @@ table td, table th {
     }
 }
 
+/*lore page*/
+
+button {
+    background: #fff;
+    border: none;
+    padding: 10px 20px;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    width: 120px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transform: skew(-21deg);
+    transition: transform 0.5s;
+}
+  
+span {
+    display: inline-block;
+    transform: skew(21deg);
+}
+  
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    left: 0;
+    background: rgb(20, 20, 20);
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.5s;
+}
+  
+button:hover {
+    color: #fff;
+}
+  
+button:hover::before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+
+/*book*/
+
+.story-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10%;
+    background: linear-gradient(0deg, #ff72e0 0%, #617cff 100%);
+}
+
+.book {
+    position: relative;
+    width: 30vw;
+    height: 70vh;
+    transition: transform 0.5s;
+}
+
+.paper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+}
+
+.front, 
+.back {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+
+.front {
+    z-index: 1;
+    backface-visibility: hidden;
+    border-left: 2px solid white;
+}
+
+.back {
+    z-index: 0;
+}
+
+.front-content,
+.back-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-content {
+    transform: rotateY(180deg);
+}
+
+/*page flip*/
+.flipped .front,
+.flipped .back {
+    transform: rotateY(-180deg);
+}
+
+/*page ordering*/
+#pg1 {
+    z-index: 3;
+}
+
+#pg2 {
+    z-index: 2;
+}
+
+#pg3 {
+    z-index: 1;
+}
