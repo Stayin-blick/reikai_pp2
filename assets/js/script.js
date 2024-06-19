@@ -6,7 +6,7 @@ const book = document.querySelector("#book");
 
 const paper1 = document.querySelector("#pg1");
 const paper2 = document.querySelector("#pg2");
-const paper3 = document.querySelector("#gp3");
+const paper3 = document.querySelector("#pg3");
 
 //event listeners
 prevBtn.addEventListener('click', goPrevPage);
@@ -31,7 +31,6 @@ function closeBook(isAtBeginning) {
     } else {
         book.style.transform = "translateX(100%)";
     }
-    
     prevBtn.style.transform = "translateX(0px)";
     nextBtn.style.transform = "translateX(0px)";
 }
@@ -51,10 +50,9 @@ function goNextPage () {
 
                 break;
             case 3:
-                openBook();
                 paper3.classList.add("flipped");
                 paper3.style.zIndex = 3;
-
+                closeBook();
                 break;
             default:
                 throw new Error("unknown page");
@@ -83,7 +81,6 @@ function goPrevPage() {
             default:
                 throw new Error("unkown state");
         }
-
         currentPage--;
     }
 }
