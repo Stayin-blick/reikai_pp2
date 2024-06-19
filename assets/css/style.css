@@ -452,6 +452,7 @@ button:hover::before {
     width: 30vw;
     height: 70vh;
     transition: transform 0.5s;
+    font-size: 18px;
 }
 
 .paper {
