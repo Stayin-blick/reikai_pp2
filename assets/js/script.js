@@ -7,6 +7,7 @@ const book = document.querySelector("#book");
 const paper1 = document.querySelector("#pg1");
 const paper2 = document.querySelector("#pg2");
 const paper3 = document.querySelector("#pg3");
+const paper4 = document.querySelector("#pg4");
 
 //event listeners
 prevBtn.addEventListener('click', goPrevPage);
@@ -16,7 +17,7 @@ nextBtn.addEventListener('click', goNextPage);
 // book logic
 
 let currentPage = 1;
-let numOfPages = 3;
+let numOfPages = 4;
 let maxPages = numOfPages + 1;
 
 function openBook () {
@@ -47,11 +48,15 @@ function goNextPage () {
                 openBook();
                 paper2.classList.add("flipped");
                 paper2.style.zIndex = 2;
-
                 break;
             case 3:
+                openBook();
                 paper3.classList.add("flipped");
                 paper3.style.zIndex = 3;
+                break;
+            case 4:
+                paper4.classList.add("flipped");
+                paper4.style.zIndex = 4;
                 closeBook();
                 break;
             default:
@@ -67,16 +72,20 @@ function goPrevPage() {
             case 2:
                 closeBook(true);
                 paper1.classList.remove("flipped");
-                paper1.style.zIndex = 3;
+                paper1.style.zIndex = 4;
                 break;
             case 3:
                 paper2.classList.remove("flipped");
-                paper2.style.zIndex = 2;
+                paper2.style.zIndex = 3;
                 break;
             case 4:
-                openBook();
                 paper3.classList.remove("flipped");
-                paper3.style.zIndex = 1;
+                paper3.style.zIndex = 2;
+                break;    
+            case 5:
+                openBook();
+                paper4.classList.remove("flipped");
+                paper4.style.zIndex = 1;
                 break;
             default:
                 throw new Error("unkown state");
