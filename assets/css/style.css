@@ -1,4 +1,5 @@
-html, body{
+html,
+body {
     width: 100%;
     height: 100%;
     margin: 0;
@@ -13,7 +14,7 @@ header {
     width: 100%;
 }
 
-.nav-container{
+.nav-container {
     background-color: grey;
 }
 
@@ -65,7 +66,7 @@ nav li a {
     padding: 10px;
 }
 
-.text-center{
+.text-center {
     text-align: center;
 }
 
@@ -77,7 +78,7 @@ nav li a {
     border-radius: 30px;
     background: #8985b4;
     box-shadow: 15px 15px 30px #bebebe,
-               -15px -15px 30px #ffffff;
+        -15px -15px 30px #ffffff;
     margin: 20px auto;
 }
 
@@ -112,11 +113,11 @@ a.active {
     color: white;
 }
 
-.clear{
-    clear:both;
+.clear {
+    clear: both;
 }
 
-.intro{
+.intro {
     border-bottom: 5px solid #692b66;
     border-radius: 0 0 50px 50px;
     max-width: 80%;
@@ -128,7 +129,7 @@ a.active {
     z-index: 1;
 }
 
-div h1~p{
+div h1~p {
     padding: 0;
     margin: 0;
 }
@@ -146,7 +147,7 @@ div h1~p{
     }
 }
 
-.kami-logo{
+.kami-logo {
     border-radius: 50%;
 }
 
@@ -158,7 +159,7 @@ video {
     max-width: 100%;
 }
 
-footer{
+footer {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -204,11 +205,11 @@ footer ul {
     border-radius: 30px;
     background: #212121;
     box-shadow: 15px 15px 30px rgb(25, 25, 25),
-                -15px -15px 30px rgb(60, 60, 60);
+        -15px -15px 30px rgb(60, 60, 60);
     margin: 10px;
     color: white;
 }
-   
+
 .team-pfp {
     width: 100%;
     border-radius: 30px 30px 0 0;
@@ -233,29 +234,29 @@ caption {
     color: white;
 }
 
-table, th, td {
+table,
+th,
+td {
     border: 1px solid;
 }
 
 table th {
     background-color: #2b1648;
     color: #fff;
-} 
+}
 
-/* Set alternating background colors for table rows */
 table tr:nth-child(even) {
-    background-color: #f2f2f2; /* Even row background color */
+    background-color: #f2f2f2;
 }
-
-/* Override background color for odd rows (if needed) */
 table tr:nth-child(odd) {
-    background-color: #fff; /* Odd row background color */
+    background-color: #fff;
 }
 
-/* Set padding for table cells */
-table td, table th {
-    padding: 10px; /* Adjust padding as needed */
-    border: 1px solid #ddd; /* Add border for table cells */
+
+table td,
+table th {
+    padding: 10px;
+    border: 1px solid #ddd;
 }
 
 
@@ -268,10 +269,6 @@ table td, table th {
 
 
 /* protectors page */
-
-.protector-explained {
-
-}
 
 .protector-leaderboard {
     display: flex;
@@ -294,7 +291,7 @@ table td, table th {
     position: relative;
     background: linear-gradient(0deg, #0d0d0d82 0%, #ffffff 100%);
 }
-  
+
 .container::before {
     content: "";
     background-color: #000000;
@@ -309,7 +306,7 @@ table td, table th {
 .container::after {
     background-color: #000000;
 }
-  
+
 .container::before {
     border-radius: 50%;
     width: 6rem;
@@ -317,7 +314,7 @@ table td, table th {
     top: 30%;
     right: 7%;
 }
-  
+
 .container::after {
     content: "";
     position: absolute;
@@ -326,7 +323,7 @@ table td, table th {
     right: 5%;
     border: 1px solid;
 }
-  
+
 .container .box {
     width: 80%;
     height: auto;
@@ -337,53 +334,53 @@ table td, table th {
     border-radius: 0.7rem;
     transition: all ease 0.3s;
 }
-  
+
 .container .box {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: inherit;
 }
-  
+
 .container .box .title {
     font-size: 2rem;
     font-weight: 500;
     letter-spacing: 0.1em;
 }
-  
+
 .container .box div strong {
     display: block;
     margin-bottom: 0.5rem;
 }
-  
+
 .container .box div p {
     margin: 0;
     font-size: 0.9em;
     font-weight: 300;
     letter-spacing: 0.1em;
 }
-  
+
 .container .box div span {
     font-size: 0.7rem;
     font-weight: 300;
 }
-  
+
 .container .box div span:nth-child(3) {
     font-weight: 500;
     margin-right: 0.2rem;
 }
-  
+
 .container .box:hover {
     box-shadow: 0px 0px 20px 1px rgb(255 0 0);
     border: 1px solid rgb(255 0 0);
 }
-  
+
 
 /* store page */
 
 .soon-kamiko {
     border-radius: 20px;
-    box-shadow: 0px 0px 20px 10px #f0aeee;    ;
+    box-shadow: 0px 0px 20px 10px #f0aeee;
     height: 70vh;
     width: auto;
 }
@@ -391,51 +388,6 @@ table td, table th {
 @media only screen and (max-width: 425px) {
     .soon {
         margin-bottom: 20px;
-    }
-}
-
-.shapedividers{
-    overflow:hidden;
-    position:relative;
-    }
-    .shapedividers::before{
-    content:'';
-    font-family:'shape divider from ShapeDividers.com';
-    position: absolute;
-    bottom: -1px;
-    left: -1px;
-    right: -1px;
-    top: -1px;
-    z-index: 3;
-    pointer-events: none;
-    background-repeat: no-repeat; 
-    background-size: 100% 243px;
-    background-position: 50% 0%;    
-    background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.28 2.17" preserveAspectRatio="none"><path d="M0 .5c3.07.55 9.27-.42 16.14 0 6.88.4 13.75.57 19.14-.11V0H0z" fill="%23000000"/><path d="M0 1c3.17.8 7.29-.38 10.04-.55 2.75-.17 9.25 1.47 12.67 1.3 3.43-.17 4.65-.84 7.05-.87 2.4-.02 5.52.88 5.52.88V0H0z" opacity=".5" fill="%23000000"/><path d="M0 1.85c2.56-.83 7.68-.3 11.79-.42 4.1-.12 6.86-.61 9.58-.28 2.73.33 5.61 1.17 8.61 1 3-.19 4.73-.82 5.3-.84V.1H0z" opacity=".5" fill="%23000000"/></svg>'); 
-    }
-    
-    @media (min-width:768px){
-    .shapedividers::before{
-    background-size: 100% 204px;
-    background-position: 50% 0%;   
-    background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.28 2.17" preserveAspectRatio="none"><path d="M0 .5c3.07.55 9.27-.42 16.14 0 6.88.4 13.75.57 19.14-.11V0H0z" fill="%23fbd8c2"/><path d="M0 1c3.17.8 7.29-.38 10.04-.55 2.75-.17 9.25 1.47 12.67 1.3 3.43-.17 4.65-.84 7.05-.87 2.4-.02 5.52.88 5.52.88V0H0z" opacity=".5" fill="%23fbd8c2"/><path d="M0 1.85c2.56-.83 7.68-.3 11.79-.42 4.1-.12 6.86-.61 9.58-.28 2.73.33 5.61 1.17 8.61 1 3-.19 4.73-.82 5.3-.84V.1H0z" opacity=".5" fill="%23fbd8c2"/></svg>'); 
-    }  
-    }
-     
-    @media (min-width:1025px){
-    .shapedividers::before{ 
-    bottom: -0.1vw;
-    left: -0.1vw;
-    right: -0.1vw;
-    top: -0.1vw; 
-    background-size: 100% 113px;
-    background-position: 50% 0%;  
-    background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 669.4 133.88"><path fill="%23b5dafb" d="M0 0c0 133.88 334.7 0 334.7 133.88C334.7 0 669.4 133.88 669.4 0z"/></svg>'); 
-    }
-    }
-    @media (min-width:2100px){
-    .shapedividers::before{
-    background-size: 100% calc(2vw + 113px);
     }
 }
 
@@ -454,12 +406,12 @@ button {
     transform: skew(-21deg);
     transition: transform 0.5s;
 }
-  
+
 span {
     display: inline-block;
     transform: skew(21deg);
 }
-  
+
 button::before {
     content: '';
     position: absolute;
@@ -472,11 +424,11 @@ button::before {
     z-index: -1;
     transition: all 0.5s;
 }
-  
+
 button:hover {
     color: #fff;
 }
-  
+
 button:hover::before {
     left: 0;
     right: 0;
@@ -511,7 +463,7 @@ button:hover::before {
     perspective: 1500px;
 }
 
-.front, 
+.front,
 .back {
     background-color: white;
     position: absolute;
