@@ -27,8 +27,8 @@ function openBook() {
     book.style.transform = "translateX(50%)";
     if (window.innerWidth <= 1024) {
         // Tablet or smaller
-        prevBtn.style.transform = "translateY(290px)";
-        nextBtn.style.transform = "translateY(290px)";
+        prevBtn.style.transform = "translateY(275px)";
+        nextBtn.style.transform = "translateY(275px)";
     } else {
         // Desktop
         prevBtn.style.transform = "translateX(-110px)";
