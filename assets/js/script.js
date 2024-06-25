@@ -9,10 +9,13 @@ const paper2 = document.querySelector("#pg2");
 const paper3 = document.querySelector("#pg3");
 const paper4 = document.querySelector("#pg4");
 
+const front = document.getElementsByClassName("front-content");
+const back = document.getElementsByClassName("back-content");
+
 //event listeners
+
 prevBtn.addEventListener('click', goPrevPage);
 nextBtn.addEventListener('click', goNextPage);
-
 
 // book logic
 
@@ -20,10 +23,17 @@ let currentPage = 1;
 let numOfPages = 4;
 let maxPages = numOfPages + 1;
 
-function openBook () {
+function openBook() {
     book.style.transform = "translateX(50%)";
-    prevBtn.style.transform = "translateX(-180px)";
-    nextBtn.style.transform = "translateX(180px)";
+    if (window.innerWidth <= 1024) {
+        // Tablet or smaller
+        prevBtn.style.transform = "translateY(290px)";
+        nextBtn.style.transform = "translateY(290px)";
+    } else {
+        // Desktop
+        prevBtn.style.transform = "translateX(-110px)";
+        nextBtn.style.transform = "translateX(110px)";
+    }
 }
 
 function closeBook(isAtBeginning) {
