@@ -500,7 +500,7 @@ button:hover::before {
     align-items: center;
     justify-content: center;
     flex-direction: column;	
-    gap: 10px;
+    gap: 5px;
 }
 
 .back-content {
@@ -530,11 +530,27 @@ button:hover::before {
     z-index: 1;
 }
 
+/*book images*/
 .book-image {
     width: 325px;
     height: auto;
     object-fit: cover;
     border-radius: 30px;
+}
+
+.book-image1 {
+    width: 325px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+#pg1 .front {
+    background-color: white;
+    background-image: url(/assets/images/tori-gate.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 480px;
 }
 
 /* Media query for tablets and smaller screens */
