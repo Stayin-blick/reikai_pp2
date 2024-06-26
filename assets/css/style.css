@@ -553,6 +553,27 @@ button:hover::before {
     background-size: auto 645px;
 }
 
+.mobile-lore {
+    display:none;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block; /* Keeps the size based on image */
+}
+
+.image-container img {
+    width: 100%; /* Ensures image fills the container */
+    height: auto; /* Maintains aspect ratio */
+}
+
+.centered-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 /* Media query for tablets and smaller screens */
 @media (max-width: 768px) {
     .book {
@@ -570,5 +591,14 @@ button:hover::before {
     .book-image1 {
         width: 325px;
         height: 140px;
+    }
+}
+
+@media (max-width: 425px) {
+    .story-container{
+        display: none;
+    }
+    .mobile-lore {
+        display: block;
     }
 }
