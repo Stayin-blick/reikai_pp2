@@ -550,7 +550,7 @@ button:hover::before {
     background-image: url(/assets/images/tori-gate.jpeg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: auto 645px;
+    background-size: auto 100%;
 }
 
 .mobile-lore {
@@ -585,11 +585,7 @@ button:hover::before {
 /* Media query for tablets and smaller screens */
 @media (max-width: 768px) {
     .book {
-        width: 45vw;
-    }
-
-    #pg1 .front {
-        background-size: auto 480px;
+        width: 50vw;
     }
 
     .book-image {
