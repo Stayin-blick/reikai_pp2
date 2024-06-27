@@ -572,6 +572,14 @@ button:hover::before {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 20px;
+    opacity: 0.75;
+    text-align: center;
+}
+
+.mobile-img {
+    width: 100%;
 }
 
 /* Media query for tablets and smaller screens */
