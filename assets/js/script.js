@@ -1,3 +1,34 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const swiper = new Swiper('.swiper', {
+      direction: 'horizontal',
+      loop: false,
+      spaceBetween: 20,
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'progressbar',
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        1024: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+      },
+    });
+  
+    console.log('Swiper initialized:', swiper);
+  });
+
+
+
+
 // ref to the dom 
 
 const prevBtn = document.querySelector("#prev-pg");

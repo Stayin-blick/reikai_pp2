@@ -14,6 +14,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
   <link rel="manifest" href="assets/favicon_io/site.webmanifest">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.min.css">
   <!--stylesheet-->
   <link rel="stylesheet" href="assets/css/style.css">
   <!--Google fonts import -->
@@ -54,111 +56,113 @@
     </div>
   </header>
   <main>
-    <div class="story-container">
-      <!--prev button-->
-      <button id="prev-pg">left</button>
-      <!--book-->
-      <div id="book" class="book">
-        <!--page 1-->
-        <div id="pg1" class="paper">
-          <div class="front">
-            <div class="front-content" id="f1">
-              <h1>The Reikai</h1>
-            </div>
-          </div>
-          <div class="back">
-            <div id="b1" class="back-content">
-              <img src="assets/images/reikai-book.jpg" alt="book front cover - tori gate"
-                aria-label="book cover tori gate" class="book-image1">
-              <div>
-                <p>In the realm of the Reikai, where the boundaries between mortal and spirit worlds blur, vibrant</p>
-                <p>hues painted the skies in shades unseen by mortal eyes. Floating islands adorned with lush foliage
-                </p>
-                <p>drifted lazily amidst wisps of ethereal mist, while cascading waterfalls glistened like liquid</p>
-                <p>crystal, their soothing melodies echoing through the air.</p>
-              </div>
-            </div>
-          </div>
+
+    <!-- Swiper Container -->
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <h2>The Reikai</h2>
+          <p>
+            In the realm of the Reikai, where the boundaries between mortal and spirit worlds blur...
+          </p>
+          <img src="assets/images/reikai-book.jpg" alt="book front cover - tori gate" aria-label="book cover tori gate"
+            class="book-image1">
         </div>
-        <!--page 2-->
-        <div id="pg2" class="paper">
-          <div class="front">
-            <div class="front-content" id="f2">
-              <p>At the heart of the Reikai, a tranquil pool of water surrounded by a narrow strip of land connected to
-                a
-                little island stood a giant tori gate.</p>
-              <p>In a silence that held the breath of eternity, a spark ignited, growing with each passing moment until
-                it filled the gate with a dazzling light.</p>
-            </div>
-          </div>
-          <div class="back">
-            <div id="b2" class="back-content">
-              <img src="assets/images/kami-tori.jpg" class="book-image" alt="group of kami infront of tori gate"
-                aria-label="group of kami infront of tori gate">
-              <p>From its midst emerged a hand, then an arm, and finally, the first Kami in the Reikai stepped forth.
-              </p>
-              <p>Suddenly before the eyes of all who beheld it, hundreds of Kami filled the heart of the Reikai, their
-                presence shimmering with the essence of divine energy.</p>
-            </div>
-          </div>
+        <!-- Slide 2 -->
+        <div class="swiper-slide p-a">
+          <p>
+            In the realm of the Reikai, where the boundaries between mortal and spirit worlds blur, vibrant hues painted
+            the skies in shades unseen by mortal eyes. Floating islands adorned with lush foliage drifted lazily amidst
+            wisps of ethereal mist, while cascading waterfalls glistened like liquid crystal, their soothing melodies
+            echoing through the air.
+          </p>
         </div>
-        <!--page 3-->
-        <div id="pg3" class="paper">
-          <div class="front">
-            <div class="front-content" id="f3">
-              <p>Days passed peacefully in the Reikai as Kami worked together to build a city to call their own.</p>
-              <p>As the sun dipped below the horizon on the day of the city's completion, the Kami celebrated long into
-                the night, their laughter and revelry echoing across the Reikai. Amidst the bustling energy of the city,
-                Kami feasted, drank, and danced, their spirits soaring with the joy of their achievement.</p>
-              <p>Amongst the cheers and shouts, only a select few discerned whispers carried on the wind, a beckoning
-                from
-                the elder god who had created them, guiding them back to where it all began.</p>
-            </div>
-          </div>
-          <div class="back">
-            <div id="b3" class="back-content">
-              <p>Later that night, as mist enveloped the lake and moonlight bathed the tori gate, the Saru twins, a
-                kindred spirit, and two other Kami answered the call, feeling the weight of destiny upon their
-                shoulders.
-              </p>
-              <p>Gathered before the gate, a beam of moonlight pierced the mist, illuminating a celestial map onto the
-                floor. The voice of the elder god whispered once more, urging their chosen ones to find what lay hidden.
-                With determination in their hearts, the Kami committed the map to memory, their eyes locking in silent
-                agreement, knowing they had been selected for a greater purpose.</p>
-            </div>
-          </div>
+        <!-- Slide 3 -->
+        <div class="swiper-slide p-a">
+          <p>
+            At the heart of the Reikai, a tranquil pool of water surrounded by a narrow strip of land connected to
+            a little island stood a giant tori gate. In a silence that held the breath of eternity, a spark ignited,
+            growing with each passing moment until it filled the gate with a dazzling light.
+          </p>
         </div>
-        <!--page 4-->
-        <div id="pg4" class="paper">
-          <div class="front">
-            <div class="front-content" id="f4">
-              <img src="assets/images/gear-up-book.jpg" class="book-image" alt="group of kami ready for adventure"
-                aria-label="group of kami ready for adventure">
-              <p>As if they could read each other's minds, they nodded in unison, their resolve unwavering, yet unaware
-                of
-                the dangers lurking ahead. With the whispered guidance of their creator echoing in their ears, they set
-                forth into the unknown, their hearts filled with anticipation and the promise of discovery.</p>
-            </div>
-          </div>
-          <div class="back">
-            <div id="b4" class="back-content">
-              <h2>Come back next week to follow the Kamis journey...</h2>
-            </div>
-          </div>
+        <!-- Slide 4 -->
+        <div class="swiper-slide">
+          <img src="assets/images/kami-tori.jpg" class="book-image" alt="group of kami infront of tori gate"
+            aria-label="group of kami infront of tori gate">
+          <p>
+            From its midst emerged a hand, then an arm, and finally, the first Kami in the Reikai stepped forth.
+            Suddenly before the eyes of all who beheld it, hundreds of Kami filled the heart of the Reikai, their
+            presence shimmering with the essence of divine energy.
+          </p>
+        </div>
+        <!-- Slide 5 -->
+        <div class="swiper-slide p-a">
+          <p>
+            Days passed peacefully in the Reikai as Kami worked together to build a city to call their own. As the sun
+            dipped below the horizon on the day of the city's completion, the Kami celebrated long into the night, their
+            laughter and revelry echoing across the Reikai. Amidst the bustling energy of the city, Kami feasted, drank,
+            and danced, their spirits soaring with the joy of their achievement. Amongst the cheers and shouts, only a
+            select few discerned whispers carried on the wind, a beckoning from the elder god who had created them,
+            guiding them back to where it all began.
+          </p>
+        </div>
+        <!-- Slide 6 -->
+        <div class="swiper-slide p-a">
+          <p>
+            Later that night, as mist enveloped the lake and moonlight bathed the tori gate, the Saru twins, a
+            kindred spirit, and two other Kami answered the call, feeling the weight of destiny upon their
+            shoulders.
+          </p>
+          <p>
+            Gathered before the gate, a beam of moonlight pierced the mist, illuminating a celestial map onto the
+            floor. The voice of the elder god whispered once more, urging their chosen ones to find what lay hidden.
+            With determination in their hearts, the Kami committed the map to memory, their eyes locking in silent
+            agreement, knowing they had been selected for a greater purpose.
+          </p>
+        </div>
+        <!-- Slide 7 -->
+        <div class="swiper-slide">
+          <img src="assets/images/gear-up-book.jpg" class="book-image" alt="group of kami ready for adventure"
+            aria-label="group of kami ready for adventure">
+          <p>
+            As if they could read each other's minds, they nodded in unison, their resolve unwavering, yet unaware
+            of the dangers lurking ahead. With the whispered guidance of their creator echoing in their ears, they set
+            forth into the unknown, their hearts filled with anticipation and the promise of discovery.
+          </p>
+        </div>
+        <!-- Slide 8 -->
+        <div class="swiper-slide p-a">
+          <h2>Come back next week to follow the Kamis journey...</h2>
         </div>
       </div>
-      <!--next button-->
-      <button id="next-pg">right</button>
+      <!-- Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Navigation Buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
-    <div class="mobile-lore">
-    <div class="image-oops-container">
-      <img src="assets/images/cute-kamiko.jpg" class="mobile-img" alt="cute kamiko" aria-label="cute kamiko">
-      <div class="centered-text">
-        <p>oops we arent ready on mobile yet</p>
-      </div>
-    </div>
-  </div>
   </main>
+  <!-- Footer -->
+  <footer class="card">
+    <img src="assets/images/rekai-no-kamigami-logo.jpg" class="footer-image" alt="rekai no kamigami logo"
+      aria-label="Rekai no Kamigami logo">
+    <p>Copyright © 2024 Reikai no Kamigami</p>
+    <div>
+      <p class="social-list">Socials</p>
+      <ul>
+        <li>
+          <a href="https://www.instagram.com/reikai_no_kamigami/" target="_blank" aria-label="Instagram">Instgram</a>
+        </li>
+        <li>
+          <a href="https://twitter.com/Reikai_Kamigami" target="_blank" aria-label="Twitter">X</a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!-- Custom JS -->
   <script src="assets/js/script.js"></script>
 </body>
 
