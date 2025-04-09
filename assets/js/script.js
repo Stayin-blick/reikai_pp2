@@ -1,133 +1,186 @@
-document.addEventListener("DOMContentLoaded", function () {
+// Toggle Navigation Menu
+const hamburger = document.querySelector('.hamburger');
+const navList = document.querySelector('.nav-list');
 
-  // Initialize variables
-  const quizTriggerBtn = document.getElementById("quizTriggerBtn");
-  const quizOverlay = document.getElementById("quizOverlay");
-  const quizPopup = document.getElementById("quizPopup");
-  const closeQuizBtn = document.getElementById("closeQuizBtn");
-  const nextBtn = document.getElementById("nextBtn");
-  const restartQuizBtn = document.getElementById("restartQuizBtn");
-  const questionCounter = document.getElementById("questionCounter");
-  const quizQuestion = document.getElementById("quizQuestion");
-  const scoreTracker = document.getElementById("scoreTracker");
+hamburger.addEventListener('click', () => {
+    navList.classList.toggle('active');
+});
 
-  let currentQuestionIndex = 0;
-  let score = 0;
-  const questions = [
-    {
-      question: "Who created the Kami?",
-      options: ["The Elder God", "The Kami themselves", "The Spirit of the Land", "The Moon"],
-      correctAnswer: 0
-    },
-    {
-      question: "What does the map in the Reikai reveal?",
-      options: ["A hidden treasure", "A celestial journey", "A map to the Kami's origin", "A path to the human world"],
-      correctAnswer: 1
-    },
-    {
-      question: "Which Kami first stepped forth from the gate?",
-      options: ["Saru twins", "The Elder Kami", "The first Kami", "The leader of the protectors"],
-      correctAnswer: 2
-    },
-    {
-      question: "What is the primary purpose of the Kami's journey?",
-      options: ["To find a hidden artifact", "To fight the Elder God", "To uncover their origins", "To discover the truth behind their creation"],
-      correctAnswer: 3
-    },
-    {
-      question: "Who was chosen to lead the journey?",
-      options: ["The Saru twins", "The elder Kami", "The strongest Kami", "The creator of the Kami"],
-      correctAnswer: 0
+// dark and light mode toggle
+const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+  
+    if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
     }
-  ];
+}
 
-  // Function to display the current question
-  function displayQuestion() {
-    const currentQuestion = questions[currentQuestionIndex];
-    quizQuestion.innerHTML = `
-      <p>${currentQuestion.question}</p>
-      <ul>
-        ${currentQuestion.options.map((option, index) => `
-          <li>
-            <button class="answer-btn" data-index="${index}">${option}</button>
-          </li>`).join('')}
-      </ul>
-    `;
-    questionCounter.textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
-  }
-
-  // Function to handle answer selection
-  function handleAnswerSelection(event) {
-    const selectedOptionIndex = parseInt(event.target.dataset.index);
-    const currentQuestion = questions[currentQuestionIndex];
-
-    // Check if the answer is correct
-    if (selectedOptionIndex === currentQuestion.correctAnswer) {
-      score++;
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
     }
+    else {        
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+    }    
+}
 
-    // Update the score tracker
-    scoreTracker.textContent = `Score: ${score}/${questions.length}`;
+toggleSwitch.addEventListener('change', switchTheme, false);
 
-    // Disable all buttons after an answer is selected
-    const answerButtons = document.querySelectorAll('.answer-btn');
-    answerButtons.forEach(button => button.disabled = true);
 
-    // Enable next button
-    nextBtn.disabled = false;
-  }
+// swiper - lore
+document.addEventListener('DOMContentLoaded', () => {
+  new Swiper('.swiper', {
+        direction: 'horizontal',
+        loop: false,
+        spaceBetween: 20,
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'progressbar',
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+            },
+            1024: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+            },
+        },
+        on: {
+            slideChange: function () {
+                if (this.activeIndex === 7) { 
+                    const quizTriggerBtn = document.getElementById("quizTriggerBtn");
+                    quizTriggerBtn.classList.remove("hidden");
+                }
+            }
+        }
+    });
+});
 
-  // Function to move to the next question
-  function nextQuestion() {
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
-      displayQuestion();
-      nextBtn.disabled = true;
-    } else {
-      showQuizResults();
-    }
-  }
+// quiz
+const quizTriggerBtn = document.getElementById("quizTriggerBtn");
+const quizPopup = document.getElementById("quizPopup");
+const quizOverlay = document.getElementById("quizOverlay");
+const closeQuizBtn = document.getElementById("closeQuizBtn");
+const quizQuestion = document.getElementById("quizQuestion");
+const questionCounter = document.getElementById("questionCounter");
+const scoreTracker = document.getElementById("scoreTracker");
+const nextBtn = document.getElementById("nextBtn");
+const restartBtn = document.getElementById("restartQuizBtn");
 
-  // Function to show the quiz results
-  function showQuizResults() {
-    quizQuestion.innerHTML = `
-      <h3>Quiz Over!</h3>
-      <p>Your final score is ${score} out of ${questions.length}.</p>
-    `;
-    restartQuizBtn.classList.remove("hidden");
+const questions = [
+  {
+    question: "What is the name of the Kami leader?",
+    options: ["Ryojin", "Hikaru", "Takeshi", "Kaze"],
+    answer: "Ryojin",
+  },
+  {
+    question: "Which element do the Kami control?",
+    options: ["Wind", "Water", "All Elements", "Earth"],
+    answer: "All Elements",
+  },
+  {
+    question: "What is the forbidden land called?",
+    options: ["Yami", "Kuro", "Makai", "Tenku"],
+    answer: "Makai",
+  },
+  {
+    question: "Which color represents peace among the Kami?",
+    options: ["Red", "White", "Blue", "Gold"],
+    answer: "White",
+  },
+  {
+    question: "Who betrayed the Kami in the old war?",
+    options: ["Raiden", "Sora", "Akuma", "Kenji"],
+    answer: "Akuma",
+  },
+];
+
+let currentQuestion = 0;
+let score = 0;
+
+function loadQuestion() {
+  const q = questions[currentQuestion];
+  quizQuestion.innerHTML = q.options
+    .map(
+      (opt) =>
+        `<button class="option-btn">${opt}</button>`
+    )
+    .join("");
+  questionCounter.textContent = `Question ${currentQuestion + 1} of ${
+    questions.length
+  }`;
+  scoreTracker.textContent = `Score: ${score}/${questions.length}`;
+  nextBtn.disabled = true;
+
+  document.querySelectorAll(".option-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      document
+        .querySelectorAll(".option-btn")
+        .forEach((b) => (b.disabled = true));
+
+      if (btn.textContent === q.answer) {
+        btn.style.backgroundColor = "#a6f3a6"; 
+        score++;
+      } else {
+        btn.style.backgroundColor = "#f8b6b6";
+      }
+
+      scoreTracker.textContent = `Score: ${score}/${questions.length}`;
+      nextBtn.disabled = false;
+    });
+  });
+}
+
+quizTriggerBtn.addEventListener("click", () => {
+  quizOverlay.classList.remove("hidden");
+  quizPopup.classList.remove("hidden");
+  currentQuestion = 0;
+  score = 0;
+  restartBtn.classList.add("hidden");
+  nextBtn.classList.remove("hidden");
+  loadQuestion();
+});
+
+closeQuizBtn.addEventListener("click", () => {
+  quizOverlay.classList.add("hidden");
+  quizPopup.classList.add("hidden");
+});
+
+nextBtn.addEventListener("click", () => {
+  currentQuestion++;
+  if (currentQuestion < questions.length) {
+    loadQuestion();
+  } else {
+    quizQuestion.innerHTML = `<p>Quiz complete! You scored ${score}/${
+      questions.length
+    }.</p><p>${
+      score === 5
+        ? "Perfect!"
+        : score >= 3
+        ? "Well done!"
+        : "Keep learning the lore!"
+    }</p>`;
+    questionCounter.textContent = "Quiz Complete";
     nextBtn.classList.add("hidden");
+    restartBtn.classList.remove("hidden");
   }
+});
 
-  // Function to restart the quiz
-  function restartQuiz() {
-    score = 0;
-    currentQuestionIndex = 0;
-    displayQuestion();
-    scoreTracker.textContent = `Score: ${score}/${questions.length}`;
-    restartQuizBtn.classList.add("hidden");
-    nextBtn.classList.remove("hidden");
-  }
-
-  // Event Listeners
-  quizTriggerBtn.addEventListener("click", () => {
-    quizOverlay.classList.remove("hidden");
-    quizPopup.classList.remove("hidden");
-    displayQuestion();
-  });
-
-  closeQuizBtn.addEventListener("click", () => {
-    quizOverlay.classList.add("hidden");
-    quizPopup.classList.add("hidden");
-  });
-
-  nextBtn.addEventListener("click", nextQuestion);
-
-  restartQuizBtn.addEventListener("click", restartQuiz);
-
-  document.addEventListener("click", function (event) {
-    if (event.target && event.target.matches(".answer-btn")) {
-      handleAnswerSelection(event);
-    }
-  });
-
+restartBtn.addEventListener("click", () => {
+  currentQuestion = 0;
+  score = 0;
+  restartBtn.classList.add("hidden");
+  nextBtn.classList.remove("hidden");
+  loadQuestion();
 });
