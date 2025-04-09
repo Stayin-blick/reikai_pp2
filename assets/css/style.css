@@ -251,19 +251,29 @@ video {
 }
 
 footer {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
-    justify-content: space-evenly;
-    height: 10vh;
-    width: 100%;
+    justify-content: space-between;
+    padding: .5rem;
     text-align: center;
     background-color: var(--footer-bg);
     color: var(--font-color);
+    max-width: 90%;
+}
+
+.footer-logo,
+.footer-info,
+.footer-socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .footer-image {
     height: 5vh;
     border-radius: 50%;
+    margin-bottom: 0.5rem;
 }
 
 footer ul {
@@ -273,7 +283,30 @@ footer ul {
 }
 
 .social-list {
-    margin: 0;
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;  
+}
+
+footer a {
+    margin: 0 0.5rem;
+    text-decoration: none;
+    color: var(--font-color);
+    font-size: 1.5rem; 
+}
+
+footer a:hover {
+    color: var(--hover-color);
+}
+
+.footer-info p {
+    font-size: 0.8rem;  
+}
+
+.footer-socials {
+    display: flex;
+    gap: 0.5 rem;
+    justify-content: center;
+    flex-direction: row;
 }
 
 /* team page */

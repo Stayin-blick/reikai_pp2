@@ -27,40 +27,40 @@
 </head>
 
 <body>
-    <!-- Header -->
-    <header>
-      <div class="nav-container">
-        <div class="nav-spacing">
-          <a href="index.html">
-            <img id="navIcon" src="assets/favicon_io/android-chrome-192x192.png" alt="logo">
-          </a>
-          <!-- Hamburger Menu -->
-          <button class="hamburger" aria-label="Toggle navigation">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-          <!-- Navigation Menu -->
-          <nav>
-            <ul class="nav-list">
-              <li class="nav-buttons"><a href="index.html">Home</a></li>
-              <li class="nav-buttons"><a href="team.html">Team</a></li>
-              <li class="nav-buttons"><a href="membership.html">Membership</a></li>
-              <li class="nav-buttons"><a href="protectors.html">Protectors</a></li>
-              <li class="nav-buttons"><a href="lore.html" class="active">Lore</a></li>
-              <li class="nav-buttons"><a href="store.html">Store</a></li>
-            </ul>
-          </nav>
-          <!-- Light/Dark Mode Toggle -->
-          <div class="switch">
-            <label class="theme-switch" for="checkbox">
-                <input type="checkbox" id="checkbox" />
-                <div class="slider round"></div>
-            </label>
-          </div>
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <div class="nav-spacing">
+        <a href="index.html">
+          <img id="navIcon" src="assets/favicon_io/android-chrome-192x192.png" alt="logo">
+        </a>
+        <!-- Hamburger Menu -->
+        <button class="hamburger" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <!-- Navigation Menu -->
+        <nav>
+          <ul class="nav-list">
+            <li class="nav-buttons"><a href="index.html">Home</a></li>
+            <li class="nav-buttons"><a href="team.html">Team</a></li>
+            <li class="nav-buttons"><a href="membership.html">Membership</a></li>
+            <li class="nav-buttons"><a href="protectors.html">Protectors</a></li>
+            <li class="nav-buttons"><a href="lore.html" class="active">Lore</a></li>
+            <li class="nav-buttons"><a href="store.html">Store</a></li>
+          </ul>
+        </nav>
+        <!-- Light/Dark Mode Toggle -->
+        <div class="switch">
+          <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+          </label>
         </div>
       </div>
-    </header>
+    </div>
+  </header>
   <main>
     <section>
       <h1>Rekai no Kamigami</h1>
@@ -108,17 +108,24 @@
   </main>
   <!-- Footer -->
   <footer class="card">
-    <img src="assets/images/rekai-no-kamigami-logo.jpg" class="footer-image" alt="rekai no kamigami logo"
-      aria-label="Rekai no Kamigami logo">
-    <p>Copyright © 2024 Reikai no Kamigami</p>
+    <div class="footer-logo">
+      <img src="assets/images/rekai-no-kamigami-logo.jpg" class="footer-image" alt="rekai no kamigami logo"
+        aria-label="Rekai no Kamigami logo">
+    </div>
+    <div class="footer-info">
+      <p>Copyright © 2024 Reikai no Kamigami</p>
+    </div>
     <div>
-      <p class="social-list">Socials</p>
-      <a href="https://www.instagram.com/reikai_no_kamigami/" target="_blank" aria-label="Instagram">
-        <i class="fa-brands fa-instagram"></i>
-      </a>
-      <a href="https://twitter.com/Reikai_Kamigami" target="_blank" aria-label="Twitter">
-        <i class="fa-brands fa-x-twitter"></i>
-      </a>
+      <p class="social-list">Follow Us</p>
+      <div class="footer-socials">
+
+        <a href="https://www.instagram.com/reikai_no_kamigami/" target="_blank" aria-label="Instagram">
+          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="https://twitter.com/Reikai_Kamigami" target="_blank" aria-label="Twitter">
+          <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+        </a>
+      </div>
     </div>
   </footer>
   <script src="assets/js/script.js"></script>
