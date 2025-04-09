@@ -220,7 +220,6 @@ div h1~p {
     margin: 0;
 }
 
-
 .kami-description {
     width: 90%;
     margin: auto;
@@ -515,7 +514,7 @@ table th {
 /*lore page*/
 
 .swiper {
-    background: linear-gradient(0deg, #8985b4 0%, #617cff 100%);
+    background: var(--active-nav-list-bg);
     width: 100%;
     display: flex;
     justify-content: center;
@@ -562,8 +561,116 @@ table th {
     }
 }
 
-/**/
+/* lore quiz */
+.hidden {
+    display: none;
+}
+  
+.dimmed {
+    filter: brightness(40%);
+    pointer-events: none;
+}
+  
+.quiz-trigger {
+    margin: 20px auto;
+    padding: 10px 18px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #4b68ff;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    position: absolute;
+    bottom: 42px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+}
+  
+.quiz-trigger:hover {
+    background-color: #354fcc;
+}
+  
+.quiz-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    z-index: 1001;
+    width: 90%;
+    max-width: 420px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    color:#000000;
+}
+  
+.quiz-content {
+    position: relative;
+}
+  
+.close-btn {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #444;
+}
+  
+.option-label {
+    display: block;
+    padding: 10px;
+    margin-bottom: 8px;
+    background: #f5f5f5;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+  
+.option-label:hover {
+    background: #e0e0e0;
+}
+  
+.option-label.selected {
+    background: #d0e8ff;
+    font-weight: bold;
+}
+  
+.quiz-actions {
+    margin-top: 15px;
+}
+  
+.option-btn{
+    margin-right: 10px;
+}
 
+.next-btn,
+.restart-btn {
+    padding: 8px 16px;
+    background-color: #0077ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+  
+.next-btn:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+  
+.next-btn:hover:not(:disabled),
+.restart-btn:hover {
+    background-color: #005ad6;
+}
+  
 /* Hamburger Button */
 .hamburger {
     display: none;

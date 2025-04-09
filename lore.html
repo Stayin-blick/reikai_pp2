@@ -54,8 +54,8 @@
         <!-- Light/Dark Mode Toggle -->
         <div class="switch">
           <label class="theme-switch" for="checkbox">
-              <input type="checkbox" id="checkbox" />
-              <div class="slider round"></div>
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
           </label>
         </div>
       </div>
@@ -148,6 +148,27 @@
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
     </div>
+    <!-- Quiz Trigger Button -->
+    <button id="quizTriggerBtn" class="quiz-trigger hidden">Quiz Me</button>
+
+    <!-- Dimmed Overlay -->
+    <div id="quizOverlay" class="quiz-overlay hidden"></div>
+
+    <!-- Quiz Popup -->
+    <div id="quizPopup" class="quiz-popup hidden">
+      <div class="quiz-content">
+        <span class="close-btn" id="closeQuizBtn">&times;</span>
+        <h2>Kami Lore Quiz</h2>
+        <p id="questionCounter"></p>
+        <div id="quizQuestion"></div>
+        <p id="scoreTracker">Score: 0/5</p>
+        <div class="quiz-actions">
+          <button id="nextBtn" class="next-btn" disabled>Next</button>
+          <button id="restartQuizBtn" class="restart-btn hidden">Restart</button>
+        </div>
+      </div>
+    </div>
+
   </main>
   <!-- Footer -->
   <footer class="card">
@@ -174,7 +195,7 @@
   <!-- Swiper JS -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <!-- Custom JS -->
-  <script src="assets/js/script.js"></script>
+  <script type="module" src="assets/js/script.js"></script>
 </body>
 
 </html>
