@@ -625,3 +625,11 @@ table th {
         margin: 0.5rem 0;
     }
 }
+
+/*font sizing tablets and below */
+
+@media (max-width: 768px) {
+    body {
+        font-size: 0.85rem;
+    }
+}
