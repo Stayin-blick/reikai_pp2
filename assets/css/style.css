@@ -81,6 +81,9 @@ nav li a {
     --active-link-color: white;
     --hamburger-color: #000000;
     --footer-bg: #f5f5f5;
+    --td-color:#2b1648;
+    --container-color: #2b164880;
+
 }
 
 [data-theme="dark"] {
@@ -95,6 +98,8 @@ nav li a {
     --active-link-color: #f0aeee;
     --hamburger-color: #fefefe;
     --footer-bg: #1a1a1a;
+    --td-color:#1a1a1a;
+    --container-color: #ddd;
 }
     
 .theme-switch {
@@ -344,6 +349,10 @@ div p {
 
 /* membership page */
 
+td {
+    color: var(--td-color);
+}
+
 .membership-levels {
     text-align: center;
 }
@@ -411,7 +420,7 @@ table th {
 }
 
 .container {
-    color: #2b164880;
+    color: var(--container-color);
     position: relative;
     background: linear-gradient(0deg, #0d0d0d82 0%, #ffffff 100%);
 }
