@@ -34,12 +34,13 @@ toggleSwitch.addEventListener('change', switchTheme, false);
 
 // swiper - lore
 document.addEventListener('DOMContentLoaded', () => {
-  new Swiper('.swiper', {
+  const swiper = new Swiper('.swiper', {
         direction: 'horizontal',
         loop: false,
         spaceBetween: 20,
         pagination: {
             el: '.swiper-pagination',
+            clickable: true,
             type: 'progressbar',
         },
         navigation: {
