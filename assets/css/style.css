@@ -297,7 +297,6 @@ footer a:hover {
 
 .footer-socials {
     display: flex;
-    gap: 0.5 rem;
     justify-content: center;
     flex-direction: row;
 }
