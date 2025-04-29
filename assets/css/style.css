@@ -533,6 +533,10 @@ table th {
     text-align: center;
 }
 
+.swiper-slide p {
+    width: 60%;
+}
+
 .swiper-button-next,
 .swiper-button-prev {
     color: #850d0d;
