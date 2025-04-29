@@ -112,8 +112,8 @@ let score = 0;
 
 function loadQuestion() {
   const q = questions[currentQuestion];
-  quizQuestion.innerHTML = q.options
-    .map(
+  quizQuestion.innerHTML = `<p class="question-text">${q.question}</p>`+
+    q.options.map(
       (opt) =>
         `<button class="option-btn">${opt}</button>`
     )
