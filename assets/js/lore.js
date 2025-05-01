@@ -207,9 +207,9 @@ nextBtn.addEventListener("click", () => {
     quizQuestion.innerHTML = `<p>You scored ${score}/${
       questions.length
     }.</p><p>${
-      score === 5
+      score === 10
         ? "Perfect!"
-        : score >= 3
+        : score >= 6
         ? "Well done!"
         : "Keep learning the lore!"
     }</p>`;
