@@ -511,6 +511,21 @@ table th {
 
 /*lore page*/
 
+.lore-prompt{
+    position: absolute;
+    top: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    text-align-last: center;
+    font-size: x-small;
+    background-color: rgb(255 255 255 / 3%);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    backdrop-filter: blur(35px);
+    border: solid black 0.01rem;
+}
+
 .swiper {
     background: var(--active-nav-list-bg);
     width: 100%;
