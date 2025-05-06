@@ -520,9 +520,10 @@ table th {
     text-align-last: center;
     font-size: x-small;
     padding: 0.5rem 1rem;
-    border-radius: 25px;
-    backdrop-filter: blur(35px);
-    border: solid black 0.01rem;
+    height: 10px;
+    min-width: 100%;
+    margin-top: 0px;
+    background: rgba(211, 211, 211, 0.7);
 }
 
 .swiper {
