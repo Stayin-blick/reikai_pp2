@@ -61,14 +61,6 @@ Wireframes were created for laptop and tablet use, with tablets prioritizing lan
 
 ---
 
-## Testing
-
-- Manually tested on **Chrome** (desktop) and **Safari** (iPhone 12 Pro).  
-- Confirmed responsiveness via Chrome DevTools and real devices.  
-- Accessibility and performance validated using Lighthouse.
-
----
-
 ## Bugs
 
 - Quiz questions were not loading due to missing code (now fixed).  
@@ -77,34 +69,103 @@ Wireframes were created for laptop and tablet use, with tablets prioritizing lan
 
 ---
 
-## Validator Testing
+## Testing
 
-### HTML
+Testing was conducted continuously throughout development to ensure functionality, responsiveness, accessibility, and performance.
 
-- No errors returned when tested through the official W3C validator.
+- Manually tested on **Chrome (desktop)** and **Safari (iPhone 12 Pro)**  
+- Responsiveness confirmed via **Chrome DevTools** and real devices  
+- Accessibility and performance evaluated using **Lighthouse**  
+- Developer Tools were used for debugging and ensuring consistent layout and behaviour across screen sizes
 
-![Official W3C HTML Validator](/documentation/nu-html-checker.jpg)
+### Manual Testing
 
-### CSS
-
-- No errors returned from the official W3C CSS (Jigsaw) validator.
-
-![Official W3C CSS Validator](/documentation/w3c-css-validator.jpg)
-
-### JSHint
-
-- There are 13 functions in this file.  
-- The function with the largest signature takes 1 argument; the median is 0.  
-- The largest function contains 7 statements; the median is 3.  
-- The most complex function has a cyclomatic complexity of 4; the median is 1.
+Each page of the site was manually tested to ensure:
+- Proper display on different screen sizes
+- Responsive layout on mobile, tablet, and desktop
+- All interactive features functioned as intended
 
 ---
 
-### Accessibility
+## Validator Testing
 
-- Colours and fonts were confirmed to be readable and accessible by running Lighthouse audits via DevTools.
+### HTML & CSS Validation
 
-![Lighthouse Testing](/documentation/pp2-lighthouse-score.png)
+All site pages were validated using the official **W3C HTML** and **W3C CSS** validators. The table below shows the results:
+
+| Page       | HTML Validation  | CSS Validation |
+|------------|------------------|----------------|
+| Home       | Pass             | Pass           |
+| Team       | Pass             | Pass           |
+| Membership | Pass             | Pass           |
+| protectors | Pass             | Pass           |
+| Lore       | Pass             | Pass           |
+| Store      | Pass             | Pass           |
+
+
+All validations returned no errors or warnings.
+
+---
+
+### JavaScript Validation (JSHint)
+
+JavaScript was validated using **JSHint**. Below is a summary of the analysis:
+
+- Total functions: 17  
+- Largest function takes 2 arguments; median is 0  
+- Largest function has 8 statements; median is 1  
+- Most complex function has a cyclomatic complexity of 4; median is 1
+
+## JSHint Warnings Summary
+
+Some JSHint warnings relate to **Swiper usage** and **modern ES6 syntax**. Here's a breakdown and explanation:
+
+---
+
+### 1. `Swiper` Variable – "undefined variable"
+
+- JSHint flags `Swiper` as undefined because it’s imported via CDN (`https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js`) and not explicitly declared in the script.
+- **Resolution:** This warning is safe to ignore. Swiper is correctly loaded externally and functions as expected.
+
+---
+
+### 2. `swiper` Variable – "unused variable"
+
+- The `swiper` instance is scoped within an event listener and may appear unused from JSHint’s perspective.
+- **Resolution:** This warning can also be ignored. The `swiper` variable is used during initialization and is working correctly.
+
+---
+
+## ES6 Warnings
+
+JSHint emits multiple warnings about ES6 features such as:
+
+- `let`, `const`
+- Arrow functions (`=>`)
+- Template literals (`` `${value}` ``)
+- Destructuring
+- Object shorthand syntax
+
+These appear because ES6 is not enabled in the default JSHint configuration.
+
+- **Resolution:**  
+  - The project runs on **Node v20.19.0**, which fully supports ES6 features.
+  - These warnings do not affect the code’s functionality.
+
+---
+
+## Lighthouse Testing
+
+Google Lighthouse was used to audit each page for **performance**, **accessibility**, **best practices**, and **SEO**. The scores for each page are summarized below:
+
+| Page       | Performance | Accessibility | Best Practices | SEO| evidence                                            |
+|------------|-------------|---------------|----------------|----|-----------------------------------------------------|
+| Home       | 99          | 95            | 100            | 63 |[View Evidence](/documentation/pp2-ls-home.png)      |
+| Team       | 89          | 95            | 100            | 63 |[View Evidence](/documentation/pp2-ls-team.png)      |
+| Membership | 100         | 95            | 100            | 63 |[View Evidence](/documentation/pp2-ls-membership.png)|
+| Protectors | 93          | 95            | 100            | 54 |[View Evidence](/documentation/pp2-ls-protectors.png)|
+| Lore       | 95          | 96            | 100            | 63 |[View Evidence](/documentation/pp2-ls-lore.png)      |
+| Store      | 93          | 95            | 100            | 63 |[View Evidence](/documentation/pp2-ls-store.png)     |
 
 ---
 
@@ -131,26 +192,6 @@ Wireframes were created for laptop and tablet use, with tablets prioritizing lan
 
 - Styling fixes applied across all pages.  
 - Footer updated.
-
----
-
-### JSHint Notes
-
-Some JSHint warnings are related to the **Swiper** and `swiper` variables, as well as ES6 features. Here's a breakdown:
-
-1. **Swiper Variable ("undefined variable")**  
-   - JSHint flags `Swiper` as undefined because it's loaded via a CDN (`https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js`), and not declared within the script.  
-   - **Resolution:** This warning is safe to ignore. Swiper is correctly loaded and functional.
-
-2. **swiper Variable ("unused variable")**  
-   - JSHint may flag the `swiper` variable as unused because it’s scoped inside an event listener.  
-   - **Resolution:** This can also be ignored, as the variable is used for initializing Swiper.
-
-### ES6 Warnings
-
-JSHint may produce warnings for ES6 features (e.g., `let`, `const`, arrow functions). These arise from limited ES6 support.
-
-- **Resolution:** The project runs on **Node v20.19.0**, which supports ES6 fully. The warnings don’t affect functionality. Optionally, JSHint config can be updated to suppress ES6-related warnings.
 
 ---
 
