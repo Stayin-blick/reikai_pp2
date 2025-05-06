@@ -150,9 +150,17 @@ const questions = [
 
 let currentQuestion = 0;
 let score = 0;
+let shuffledQuestions = [];
+
+function shufflequestions (array) {
+  return array
+    .map((value) => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value);
+}
 
 function loadQuestion() {
-  const q = questions[currentQuestion];
+  const q = shuffledQuestions[currentQuestion];
   quizQuestion.innerHTML = `<p class="question-text">${q.question}</p>`+
     q.options.map(
       (opt) =>
@@ -160,9 +168,9 @@ function loadQuestion() {
     )
     .join("");
   questionCounter.textContent = `Question ${currentQuestion + 1} of ${
-    questions.length
+    shuffledQuestions.length
   }`;
-  scoreTracker.textContent = `Score: ${score}/${questions.length}`;
+  scoreTracker.textContent = `Score: ${score}/${shuffledQuestions.length}`;
   nextBtn.disabled = true;
 
   document.querySelectorAll(".option-btn").forEach((btn) => {
@@ -178,7 +186,7 @@ function loadQuestion() {
         btn.style.backgroundColor = "#f8b6b6";
       }
 
-      scoreTracker.textContent = `Score: ${score}/${questions.length}`;
+      scoreTracker.textContent = `Score: ${score}/${shuffledQuestions.length}`;
       nextBtn.disabled = false;
     });
   });
@@ -187,6 +195,7 @@ function loadQuestion() {
 quizTriggerBtn.addEventListener("click", () => {
   quizOverlay.classList.remove("hidden");
   quizPopup.classList.remove("hidden");
+  shuffledQuestions = shufflequestions(questions);
   currentQuestion = 0;
   score = 0;
   restartBtn.classList.add("hidden");
@@ -201,11 +210,11 @@ closeQuizBtn.addEventListener("click", () => {
 
 nextBtn.addEventListener("click", () => {
   currentQuestion++;
-  if (currentQuestion < questions.length) {
+  if (currentQuestion < shuffledQuestions.length) {
     loadQuestion();
   } else {
     quizQuestion.innerHTML = `<p>You scored ${score}/${
-      questions.length
+      shuffledQuestions.length
     }.</p><p>${
       score === 10
         ? "Perfect!"
@@ -220,6 +229,7 @@ nextBtn.addEventListener("click", () => {
 });
 
 restartBtn.addEventListener("click", () => {
+  shuffledQuestions = shufflequestions(questions);
   currentQuestion = 0;
   score = 0;
   restartBtn.classList.add("hidden");
